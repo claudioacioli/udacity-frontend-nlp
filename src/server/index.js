@@ -1,28 +1,29 @@
-var path = require('path')
+// Requiriments
 const express = require('express')
 const bodyParser = require('body-parser')
 const cors = require('cors')
 const mockAPIResponse = require('./mockAPI.js')
 const port = 8081
-const app = express()
 
+// Routes
+const rootRoute = (req, res) => {
+  res.sendFile('dist/index.html')
+}
+const testRoute = (req, res) => {
+  res.send(mockAPIResponse)
+}
+
+// Settings
+const app = express()
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.use(cors())
 app.use(express.static('dist'))
+app.get('/', rootRoute)
+app.get('/test', testRoute)
 
+//Running
 console.log(__dirname)
-
-app.get('/', function (req, res) {
-    res.sendFile('dist/index.html')
-    //res.sendFile(path.resolve('src/client/views/index.html'))
-})
-
-// designates what port the app will listen to for incoming requests
-app.listen(port, function () {
-    console.log(`Example app listening on port ${port}!`)
-})
-
-app.get('/test', function (req, res) {
-    res.send(mockAPIResponse)
+app.listen(port, () => {
+  console.log(`Example app listening on port ${port}!`)
 })
