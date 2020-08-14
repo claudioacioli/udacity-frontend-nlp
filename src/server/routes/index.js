@@ -8,7 +8,12 @@ const testRoute = async (req, res) => {
   res.send(mockAPIResponse)
 }
 
+const nlpRoute = async (req, res) => {
+  console.log(req.body)
+  res.send(mockAPIResponse)
+}
+
 module.exports = {
   rootRoute,
-  testRoute
+  nlpRoute
 }
