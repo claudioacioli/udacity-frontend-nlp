@@ -1,6 +1,7 @@
 import { byId } from './by'
+import { getData } from './api'
 
-function handleSubmit(event) {
+async function handleSubmit(event) {
   event.preventDefault()
 
   // check what text was put into the form field
@@ -8,11 +9,9 @@ function handleSubmit(event) {
   Client.checkForName(formText)
 
   console.log('::: Form Submitted :::')
-  fetch('http://localhost:8081/test')
-    .then(res => res.json())
-    .then(function(res) {
-      byId('results').innerHTML = res.message
-  })
+  const result = await getData('http://localhost:8081/test')
+  byId('results').innerHTML = result.message
+
 }
 
 export { handleSubmit }
