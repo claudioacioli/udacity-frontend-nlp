@@ -1,4 +1,4 @@
-# Evaluate News with nlp
+# Evaluate News with NLP
 
 This is a Udacity project FrontEnd Nanodegree
 
@@ -8,7 +8,7 @@ To view this project on your local machine please following these instructions:
 
 * Clone this respository:
 ```bash
-git clone ...
+git clone https://github.com/claudioacioli/udacity-frontend-nlp.git
 ```
 
 * Move to the Repository on your local machine:
@@ -39,7 +39,7 @@ npm run start
 npm run build-dev
 ```
 
-Because we are using the ```webpack-dev-server``` You need this two steps.
+Because we are using the ```webpack-dev-server``` You need these two steps.
 
 ### Production
 
