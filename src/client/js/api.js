@@ -7,7 +7,9 @@
  *
  * @Author: Claudio Acioli
 */
-async function getData(url, mode="cors") {
+export const
+  
+  getData = async (url, mode="cors") => {
     const response = await fetch(url, {method:"GET", mode});
     
     try {
@@ -16,9 +18,9 @@ async function getData(url, mode="cors") {
     } catch (ex) {
       console.error("Error", ex);
     }
-  }
+  },
 
-async function postData(url, data={}, mode="cors") {
+  postData = async (url, data={}, mode="cors") => {
     const response = await fetch(url, {
       method: "POST",
       credentials: "same-origin",
@@ -37,5 +39,3 @@ async function postData(url, data={}, mode="cors") {
     }
   }
 ;
-
-export { postData, getData }

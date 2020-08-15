@@ -1,3 +1,4 @@
+import regeneratorRuntime from "regenerator-runtime";
 import { handleSubmit } from '../src/client/js/formHandler'
 
 describe('Testing the submit functionality', () => {
