@@ -1,6 +1,7 @@
 const https = require('https')
 
 const sentiment = async (key, text) => (
+  
   new Promise((resolve, reject) => {
     
     const options = {
@@ -23,8 +24,7 @@ const sentiment = async (key, text) => (
 
       const data = [];
       res.on('data', chunk => data.push(chunk.toString()))
-      res.on('end', () => {
-       
+      res.on('end', () => {       
         try {
           result = JSON.parse(data.join())
           resolve({'message': result.subjectivity})
@@ -32,9 +32,7 @@ const sentiment = async (key, text) => (
           console.error(ex)
           reject(result)
         }
-
       })
-
     })
     .on('error', err => {
       console.error('Error on http', err)
@@ -43,7 +41,9 @@ const sentiment = async (key, text) => (
 
     req.write('')
     req.end();
+
   })
+
 )
 
 module.exports = {
