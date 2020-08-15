@@ -26,9 +26,9 @@ export const
       credentials: "same-origin",
       body: JSON.stringify(data),
       mode,
-      headers: {
+      headers: new Headers({
         "Content-Type": "application/json"
-      }
+      })
     });
 
     try {
