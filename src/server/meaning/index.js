@@ -5,7 +5,7 @@ const sentiment = async (key, text) => (
     
     const options = {
       hostname: 'api.meaningcloud.com' ,
-      path: `/sentiment-2.1?lang=en&key=${key}&of=json&txt=${text}`,
+      path: `/sentiment-2.1?lang=en&key=${key}&of=json&txt=${encodeURI(text)}`,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

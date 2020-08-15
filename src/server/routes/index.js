@@ -10,7 +10,7 @@ const testRoute = async (req, res) => {
 }
 
 const nlpRoute = async (req, res) => {
-  const text = encodeURI(req.body.text);
+  const text = req.body.text;
   const key = process.env.API_KEY
   const result = await sentiment(key, text)
   res.send(result)
