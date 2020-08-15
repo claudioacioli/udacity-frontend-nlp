@@ -30,7 +30,7 @@ For setup that you need create a ```.env``` file in the root folder and then add
 echo "API_KEY=abkjdkj58454" > .env
 ```
 
-This is a simple way to do that, but there are a lot of ways, so still confortable to do that.
+This is a simple way to do that, but there are a lot of ways, so feel free to do that.
 
 ## Running
 
