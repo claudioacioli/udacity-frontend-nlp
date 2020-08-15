@@ -1,16 +1,18 @@
 const https = require('https')
 
 const sentiment = async (key, text) => (
-  
-  new Promise((resolve, reject) => {
     
+  new Promise((resolve, reject) => {
+  
+    const body = ''
+
     const options = {
       hostname: 'api.meaningcloud.com' ,
       path: `/sentiment-2.1?lang=en&key=${key}&of=json&txt=${encodeURI(text)}`,
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        'Content-Length': 0
+        'Content-Length': body.length
       }
     } 
 
@@ -39,7 +41,7 @@ const sentiment = async (key, text) => (
       reject(result)
     })
 
-    req.write('')
+    req.write(body)
     req.end();
 
   })
