@@ -23,7 +23,7 @@ npm install
 
 * Setup api key
 
-This project use the api (Meaning cloud)[https://www.meaningcloud.com] for NLP processment.
+This project use the api [Meaning cloud](https://www.meaningcloud.com) for NLP processment.
 For setup that you need create a ```.env``` file in the root folder and then add new environment variable ```API_KEY```:
 
 ```bash
